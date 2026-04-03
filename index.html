@@ -352,120 +352,6 @@
         border-right: none;
       }
 
-      /* ─── EXPERTISE ─── */
-      .expertise {
-        background: var(--off-white);
-        padding: 72px 48px;
-      }
-
-      .expertise h2 {
-        font-family: "DM Sans", sans-serif;
-        font-size: clamp(36px, 5vw, 60px);
-        font-weight: 400;
-        margin-bottom: 48px;
-      }
-
-      .accordion-item {
-        border-top: 1px solid var(--light-gray);
-      }
-      .accordion-item:last-child {
-        border-bottom: 1px solid var(--light-gray);
-      }
-
-      .accordion-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 28px 0;
-      }
-
-      .accordion-title {
-        font-family: "DM Sans", sans-serif;
-        font-size: clamp(24px, 3vw, 36px);
-        font-weight: 400;
-      }
-
-      .accordion-icon {
-        font-size: 18px;
-        font-weight: 300;
-        width: 28px;
-        height: 28px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid var(--black);
-        border-radius: 50%;
-        flex-shrink: 0;
-        /* Fallback for no-JS: always show + */
-      }
-
-      /* No-JS fallback: all accordion bodies visible */
-      .accordion-body {
-        padding-bottom: 40px;
-      }
-
-      .accordion-inner {
-        display: grid;
-        grid-template-columns: 280px 1fr;
-        gap: 40px;
-        align-items: start;
-      }
-
-      .accordion-img {
-        width: 100%;
-        height: 200px;
-        background: var(--light-gray);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 10px;
-        color: var(--mid-gray);
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-      }
-
-      .accordion-text h4 {
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: var(--mid-gray);
-        margin-bottom: 12px;
-      }
-
-      .accordion-text p {
-        font-size: 13px;
-        color: var(--dark-gray);
-        line-height: 1.9;
-        margin-bottom: 20px;
-      }
-
-      .accordion-text h5 {
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        margin-bottom: 10px;
-      }
-
-      .accordion-text ul {
-        list-style: none;
-        padding: 0;
-        margin-bottom: 24px;
-      }
-
-      .accordion-text ul li {
-        font-size: 12px;
-        color: var(--dark-gray);
-        padding: 4px 0;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-
-      .accordion-text ul li::before {
-        content: "—";
-        color: var(--mid-gray);
-        font-size: 10px;
-      }
 
       /* ─── CTA BANNER ─── */
       .cta-banner {
@@ -957,80 +843,6 @@
         margin-bottom: 88px;
       }
 
-      .expertise {
-        padding: 112px 48px 96px;
-        background: var(--off-white);
-      }
-
-      .expertise h2 {
-        font-size: clamp(76px, 10vw, 140px);
-        line-height: 0.9;
-        margin-bottom: 8px;
-        max-width: 6ch;
-        position: relative;
-        z-index: 3;
-      }
-
-      .expertise-header {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 24px;
-        margin-bottom: 40px;
-        align-items: start;
-      }
-
-      .expertise-heading {
-        grid-column: 1 / span 8;
-      }
-
-      .expertise-media {
-        grid-column: 8 / -1;
-        position: relative;
-        min-height: 260px;
-        margin-top: 34px;
-      }
-
-      .expertise-placeholder {
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 100%;
-        height: 260px;
-      }
-
-      .accordion-header {
-        align-items: flex-end;
-        padding: 34px 0;
-      }
-
-      .accordion-title {
-        font-size: clamp(34px, 4vw, 68px);
-        line-height: 1.05;
-        max-width: 10ch;
-      }
-
-      .accordion-inner {
-        grid-template-columns: 340px 1fr;
-        gap: 48px;
-      }
-
-      .accordion-img {
-        height: 260px;
-        border: 1px solid var(--light-gray);
-        background:
-          linear-gradient(
-            180deg,
-            rgba(255, 255, 255, 0.9),
-            rgba(232, 232, 232, 0.92)
-          ),
-          repeating-linear-gradient(
-            135deg,
-            rgba(0, 0, 0, 0.04),
-            rgba(0, 0, 0, 0.04) 2px,
-            transparent 2px,
-            transparent 12px
-          );
-      }
 
       .cta-banner {
         min-height: 520px;
@@ -1126,9 +938,6 @@
         .projects {
           padding: 56px 28px;
         }
-        .expertise {
-          padding: 56px 28px;
-        }
         .cta-banner {
           padding: 40px 28px;
         }
@@ -1141,10 +950,6 @@
         }
         .footer-top .footer-col:last-child {
           grid-column: 2 / 5;
-        }
-        .accordion-inner {
-          grid-template-columns: 220px 1fr;
-          gap: 28px;
         }
       }
 
@@ -1227,16 +1032,6 @@
           display: none;
         }
 
-        .expertise {
-          padding: 48px 20px;
-        }
-        .accordion-inner {
-          grid-template-columns: 1fr;
-          gap: 20px;
-        }
-        .accordion-img {
-          height: 180px;
-        }
 
         .cta-banner {
           height: auto;
@@ -1304,10 +1099,6 @@
           padding: 88px 28px 64px;
         }
 
-        .expertise {
-          padding: 96px 28px 80px;
-        }
-
         .cta-banner {
           padding: 64px 28px;
         }
@@ -1339,22 +1130,6 @@
         .project-link {
           grid-column: 2 / -1;
           justify-self: end;
-        }
-
-        .expertise-header {
-          grid-template-columns: repeat(8, 1fr);
-        }
-
-        .expertise-heading {
-          grid-column: 1 / span 5;
-        }
-
-        .expertise-media {
-          grid-column: 5 / -1;
-        }
-
-        .accordion-inner {
-          grid-template-columns: 260px 1fr;
         }
 
         .cta-content {
@@ -1426,7 +1201,6 @@
 
         .about h2,
         .projects h2,
-        .expertise h2,
         .cta-banner h2 {
           max-width: none;
         }
@@ -1500,39 +1274,6 @@
           justify-self: start;
         }
 
-        .expertise {
-          padding: 84px 20px 60px;
-        }
-
-        .expertise-header {
-          grid-template-columns: 1fr;
-          gap: 20px;
-        }
-
-        .expertise-heading,
-        .expertise-media {
-          grid-column: auto;
-        }
-
-        .expertise-media {
-          min-height: 180px;
-          margin-top: 0;
-        }
-
-        .expertise-placeholder {
-          position: relative;
-          height: 180px;
-        }
-
-        .accordion-title {
-          max-width: none;
-        }
-
-        .accordion-inner {
-          grid-template-columns: 1fr;
-          gap: 20px;
-        }
-
         .cta-banner {
           min-height: auto;
           padding: 56px 20px;
@@ -1577,9 +1318,7 @@
       .hero h1,
       .about h2,
       .projects h2,
-      .expertise h2,
       .cta-banner h2,
-      .accordion-title,
       .stat-number,
       .footer-logo {
         font-family: "DM Sans", sans-serif;
@@ -1594,9 +1333,7 @@
       .hero h1,
       .about h2,
       .projects h2,
-      .expertise h2,
       .cta-banner h2,
-      .accordion-title,
       .footer-logo,
       .stat-number {
         letter-spacing: -0.06em;
@@ -1604,7 +1341,6 @@
 
       .hero-copy p,
       .about-left p,
-      .accordion-text p,
       .project-summary,
       .project-detail-copy,
       .footer-col ul li a,
@@ -1625,8 +1361,7 @@
       }
 
       .hero-copy p,
-      .about-left p,
-      .accordion-text p {
+      .about-left p {
         color: var(--dark-gray);
       }
 
@@ -1738,7 +1473,6 @@
       @media (max-width: 768px) {
         .hero-copy p,
         .about-left p,
-        .accordion-text p,
         .project-summary,
         .project-detail-copy {
           font-size: 15px;
@@ -1801,7 +1535,6 @@
     <div class="mobile-nav" id="mobileNav" aria-hidden="true">
       <a href="#work">Work</a>
       <a href="#about">About</a>
-      <a href="#expertise">Expertise</a>
       <a href="#contact">Contact</a>
       <div class="mobile-nav-divider"></div>
       <a href="#">Twitter / X</a>
@@ -2026,105 +1759,6 @@
           <div class="logo-cell">Client Logo</div>
           <div class="logo-cell">Client Logo</div>
           <div class="logo-cell">Client Logo</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════ EXPERTISE ═══════════════════════════ -->
-    <section class="expertise" id="expertise">
-      <div class="expertise-header">
-        <div class="expertise-heading">
-          <h2>
-            <span class="heading-sans">Areas of</span><br /><span
-              class="heading-serif"
-              >Focus</span
-            >
-          </h2>
-        </div>
-        <div class="expertise-media">
-          <div class="placeholder-card expertise-placeholder">
-            Reference board / 08
-          </div>
-        </div>
-      </div>
-
-      <!-- Accordion Item 1 — starts open -->
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <div class="accordion-title">Accordion Item Title One</div>
-          <div class="accordion-icon">+</div>
-        </div>
-        <div class="accordion-body">
-          <div class="accordion-inner">
-            <div class="accordion-img">Feature Image</div>
-            <div class="accordion-text">
-              <h4>Section Label / Eyebrow</h4>
-              <p>
-                Expanded accordion body copy. This paragraph describes the
-                service, capability, or topic in detail. Two to four sentences.
-                Supports the section heading above and leads into the list of
-                features or deliverables below.
-              </p>
-              <h5>Sub-list Heading</h5>
-              <ul>
-                <li>List item / deliverable one</li>
-                <li>List item / deliverable two</li>
-                <li>List item / deliverable three</li>
-                <li>List item / deliverable four</li>
-              </ul>
-              <a href="#" class="btn">Secondary CTA &rarr;</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Accordion Item 2 -->
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <div class="accordion-title">Accordion Item Title Two</div>
-          <div class="accordion-icon">+</div>
-        </div>
-        <div class="accordion-body">
-          <div class="accordion-inner">
-            <div class="accordion-img">Feature Image</div>
-            <div class="accordion-text">
-              <h4>Section Label / Eyebrow</h4>
-              <p>Expanded accordion body copy for item two.</p>
-              <h5>Sub-list Heading</h5>
-              <ul>
-                <li>List item one</li>
-                <li>List item two</li>
-                <li>List item three</li>
-              </ul>
-              <a href="#" class="btn">Secondary CTA &rarr;</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Accordion Item 3 -->
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <div class="accordion-title">
-            Accordion Item Title<br />Three (Two Lines)
-          </div>
-          <div class="accordion-icon">+</div>
-        </div>
-        <div class="accordion-body">
-          <div class="accordion-inner">
-            <div class="accordion-img">Feature Image</div>
-            <div class="accordion-text">
-              <h4>Section Label / Eyebrow</h4>
-              <p>Expanded accordion body copy for item three.</p>
-              <h5>Sub-list Heading</h5>
-              <ul>
-                <li>List item one</li>
-                <li>List item two</li>
-                <li>List item three</li>
-              </ul>
-              <a href="#" class="btn">Secondary CTA &rarr;</a>
-            </div>
-          </div>
         </div>
       </div>
     </section>

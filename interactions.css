@@ -132,6 +132,14 @@ body.cursor-contrast .custom-cursor-ring {
   border-color: rgba(255, 255, 255, 0.82);
 }
 
+body.cursor-contrast.cursor-on-white-btn .custom-cursor-dot {
+  background: #111111;
+}
+
+body.cursor-contrast.cursor-on-white-btn .custom-cursor-ring {
+  border-color: rgba(17, 17, 17, 0.72);
+}
+
 
 /* ========================
    NAV ACTIVE STATE

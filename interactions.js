@@ -176,7 +176,16 @@ if (supportsFinePointer && !prefersReducedMotion) {
     });
   });
 
-updateDotPosition();
+  document.querySelectorAll('.btn-outline-white').forEach((btn) => {
+    btn.addEventListener('pointerenter', () => {
+      document.body.classList.add('cursor-on-white-btn');
+    });
+    btn.addEventListener('pointerleave', () => {
+      document.body.classList.remove('cursor-on-white-btn');
+    });
+  });
+
+  updateDotPosition();
   animateLaggingCursor();
 }
 
@@ -236,7 +245,7 @@ window.addEventListener('load', () => {
 });
 
 if (!prefersReducedMotion) {
-  document.querySelectorAll('.about h2, .projects h2, .expertise h2, .cta-banner h2').forEach((heading) => {
+  document.querySelectorAll('.about h2, .projects h2, .cta-banner h2').forEach((heading) => {
     splitHeadingLines(heading, 'section-heading-line', 'section-heading-line-text', 55);
   });
 }
@@ -256,7 +265,7 @@ const sectionHeadingObserver = new IntersectionObserver((entries, observer) => {
 });
 
 if (!prefersReducedMotion) {
-  document.querySelectorAll('.about h2, .projects h2, .expertise h2, .cta-banner h2').forEach((heading) => {
+  document.querySelectorAll('.about h2, .projects h2, .cta-banner h2').forEach((heading) => {
     sectionHeadingObserver.observe(heading);
   });
 }
