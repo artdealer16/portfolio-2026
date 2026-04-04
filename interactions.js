@@ -176,6 +176,28 @@ if (supportsFinePointer && !prefersReducedMotion) {
     });
   });
 
+  const projectLinks = document.querySelectorAll('.project-item .project-link');
+
+  projectLinks.forEach((link) => {
+    const card = link.closest('.project-item');
+
+    // This pointerenter listener hides the preview and activates the enlarged ring,
+    // matching the cursor treatment of regular buttons.
+    link.addEventListener('pointerenter', () => {
+      hideProjectCursorPreview();
+      document.body.classList.add('cursor-active');
+    });
+
+    // This pointerleave listener removes the active ring and restores the preview
+    // if the pointer is still inside the parent card.
+    link.addEventListener('pointerleave', (event) => {
+      document.body.classList.remove('cursor-active');
+      if (event.relatedTarget?.closest('.project-item') === card) {
+        showProjectCursorPreview(card);
+      }
+    });
+  });
+
   document.querySelectorAll('.btn-outline-white').forEach((btn) => {
     btn.addEventListener('pointerenter', () => {
       document.body.classList.add('cursor-on-white-btn');
