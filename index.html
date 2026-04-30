@@ -330,45 +330,42 @@
       /* ─── LOGO GRID ─── */
       .logo-section {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: space-between;
         border-top: 1px solid #333;
         padding-top: 40px;
+        margin-top: 150px;
       }
 
-      .logo-section-heading-wrap {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        min-width: 0;
-      }
-
-      .logo-section-heading {
-        font-size: clamp(28px, 3vw, 48px);
+      .logo-section-title {
+        font-family: "DM Sans", sans-serif;
+        font-size: clamp(14px, 2vw, 22px);
         font-weight: 400;
-        letter-spacing: -0.04em;
+        line-height: 1.1;
         color: #ffffff;
-        line-height: 1;
+        margin-bottom: 40px;
+        text-align: center;
       }
 
       .logo-grid {
         padding-top: 0;
-        display: grid;
-        grid-template-columns: repeat(3, 64px);
-        justify-content: start;
-        gap: 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 16px;
+        justify-content: center;
       }
 
       .logo-item {
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-shrink: 0;
       }
 
       .logo-box {
-        width: 64px;
-        height: 64px;
+        width: 140px;
+        height: 140px;
         background: #111111;
         border: 1px solid #2d2d2d;
         border-radius: 12px;
@@ -389,8 +386,8 @@
       }
 
       .logo-box img {
-        width: 24px;
-        height: 24px;
+        width: 64px;
+        height: 64px;
         object-fit: contain;
         display: block;
         transition: filter 280ms ease;
@@ -1754,6 +1751,7 @@
 
       <!-- Client Logo Grid -->
       <div class="logo-section">
+        <h2 class="logo-section-title">Technologies</h2>
         <div class="logo-grid">
           <div class="logo-item"><div class="logo-box"><img src="technology icons/figma.svg" alt="Figma" /></div></div>
           <div class="logo-item"><div class="logo-box"><img src="technology icons/html5.svg" alt="HTML5" /></div></div>
@@ -1765,11 +1763,14 @@
           <div class="logo-item"><div class="logo-box"><img src="technology icons/adobe-ps.svg" alt="Adobe Photoshop" /></div></div>
           <div class="logo-item"><div class="logo-box"><img src="technology icons/canva.svg" alt="Canva" /></div></div>
         </div>
-        <div class="logo-section-heading-wrap">
-          <h2 class="logo-section-heading">Technologies</h2>
-        </div>
+     
       </div>
+
+         
+         
+       
     </section>
+
 
     <!-- ═══════════════════════════════ CTA BANNER ════════════════════════ -->
     <section class="cta-banner">
