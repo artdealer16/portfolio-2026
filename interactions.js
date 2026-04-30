@@ -58,23 +58,12 @@ if (supportsFinePointer && !prefersReducedMotion) {
 
   const cursorDot = document.createElement('div');
   const cursorRing = document.createElement('div');
-  const cursorPreview = document.createElement('div');
-  const cursorPreviewImg = document.createElement('img');
-  const cursorPreviewLabel = document.createElement('span');
 
   cursorDot.className = 'custom-cursor-dot';
   cursorRing.className = 'custom-cursor-ring';
-  cursorPreview.className = 'custom-cursor-preview';
-  cursorPreviewImg.className = 'custom-cursor-preview__img';
-  cursorPreviewImg.alt = '';
-  cursorPreviewLabel.className = 'custom-cursor-preview__label';
-  cursorPreviewLabel.textContent = 'Project image placeholder';
 
-  cursorPreview.appendChild(cursorPreviewImg);
-  cursorPreview.appendChild(cursorPreviewLabel);
   document.body.appendChild(cursorDot);
   document.body.appendChild(cursorRing);
-  document.body.appendChild(cursorPreview);
 
   let pointerX = window.innerWidth / 2;
   let pointerY = window.innerHeight / 2;
@@ -94,8 +83,6 @@ if (supportsFinePointer && !prefersReducedMotion) {
 
     cursorRing.style.setProperty('--cursor-ring-x', `${ringX}px`);
     cursorRing.style.setProperty('--cursor-ring-y', `${ringY}px`);
-    cursorPreview.style.setProperty('--cursor-ring-x', `${ringX}px`);
-    cursorPreview.style.setProperty('--cursor-ring-y', `${ringY}px`);
 
     window.requestAnimationFrame(animateLaggingCursor);
   }
@@ -104,18 +91,6 @@ if (supportsFinePointer && !prefersReducedMotion) {
   function updateCursorContrast(targetElement) {
     const isDarkSurface = Boolean(targetElement?.closest('.projects, .cta-banner, footer'));
     document.body.classList.toggle('cursor-contrast', isDarkSurface);
-  }
-
-  // This function swaps the lagging ring into a project-image placeholder preview.
-  function showProjectCursorPreview(card) {
-    cursorPreviewLabel.textContent = card.dataset.previewLabel || 'Project image placeholder';
-    document.body.classList.add('cursor-project-preview');
-    cursorPreviewImg.src = card.dataset.previewImage || '';
-  }
-
-  // This function restores the default dot and ring after leaving a project card.
-  function hideProjectCursorPreview() {
-    document.body.classList.remove('cursor-project-preview');
   }
 
   // This pointermove listener keeps the cursor synced to the current pointer position.
@@ -131,7 +106,6 @@ if (supportsFinePointer && !prefersReducedMotion) {
   // This pointerleave listener hides the custom cursor when the pointer exits the browser window.
   document.addEventListener('pointerleave', () => {
     document.body.classList.remove('cursor-visible');
-    hideProjectCursorPreview();
   });
 
   // This pointerenter listener shows the cursor again when the pointer returns to the page.
@@ -145,56 +119,16 @@ if (supportsFinePointer && !prefersReducedMotion) {
   }, { passive: true });
 
   const genericHoverTargets = document.querySelectorAll('a, button, .accordion-header');
-  const projectCards = document.querySelectorAll('.project-item');
 
   genericHoverTargets.forEach((target) => {
     // This pointerenter listener slightly enlarges the ring on regular interactive elements.
     target.addEventListener('pointerenter', () => {
-      if (target.closest('.project-item')) return;
-
       document.body.classList.add('cursor-active');
     });
 
     // This pointerleave listener returns the ring to its resting size after leaving a control.
     target.addEventListener('pointerleave', () => {
-      if (target.closest('.project-item')) return;
-
       document.body.classList.remove('cursor-active');
-    });
-  });
-
-  projectCards.forEach((card) => {
-    // This pointerenter listener turns the lagging ring into a project preview placeholder.
-    card.addEventListener('pointerenter', () => {
-      document.body.classList.remove('cursor-active');
-      showProjectCursorPreview(card);
-    });
-
-    // This pointerleave listener restores the default cursor once the card is no longer hovered.
-    card.addEventListener('pointerleave', () => {
-      hideProjectCursorPreview();
-    });
-  });
-
-  const projectLinks = document.querySelectorAll('.project-item .project-link');
-
-  projectLinks.forEach((link) => {
-    const card = link.closest('.project-item');
-
-    // This pointerenter listener hides the preview and activates the enlarged ring,
-    // matching the cursor treatment of regular buttons.
-    link.addEventListener('pointerenter', () => {
-      hideProjectCursorPreview();
-      document.body.classList.add('cursor-active');
-    });
-
-    // This pointerleave listener removes the active ring and restores the preview
-    // if the pointer is still inside the parent card.
-    link.addEventListener('pointerleave', (event) => {
-      document.body.classList.remove('cursor-active');
-      if (event.relatedTarget?.closest('.project-item') === card) {
-        showProjectCursorPreview(card);
-      }
     });
   });
 

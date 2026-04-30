@@ -7,8 +7,7 @@
   --reveal-distance: 36px;
   --cursor-ring-size: 34px;
   --cursor-dot-size: 8px;
-  --cursor-preview-width: 400px;
-  --cursor-preview-height: 400px;
+
 }
 
 html {
@@ -25,8 +24,7 @@ body.has-custom-cursor * {
    ======================== */
 
 .custom-cursor-dot,
-.custom-cursor-ring,
-.custom-cursor-preview {
+.custom-cursor-ring {
   position: fixed;
   top: 0;
   left: 0;
@@ -60,50 +58,6 @@ body.has-custom-cursor * {
     scale(var(--cursor-ring-scale, 1));
 }
 
-.custom-cursor-preview {
-  width: var(--cursor-preview-width);
-  height: var(--cursor-preview-height);
-  padding: 16px;
-  display: flex;
-  align-items: flex-end;
-  border: 1px solid rgba(17, 17, 17, 0.18);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(239, 239, 239, 0.96)),
-    repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 2px, transparent 2px, transparent 13px);
-  transform:
-    translate3d(var(--cursor-ring-x, 0), var(--cursor-ring-y, 0), 0)
-    translate(-50%, -50%)
-    scale(var(--cursor-preview-scale, 0.9));
-}
-
-.custom-cursor-preview::before {
-  content: '';
-  position: absolute;
-  inset: 16px auto auto 16px;
-  width: 24px;
-  height: 24px;
-  border-top: 1px solid rgba(0, 0, 0, 0.14);
-  border-left: 1px solid rgba(0, 0, 0, 0.14);
-}
-
-.custom-cursor-preview__img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-.custom-cursor-preview__label {
-  position: relative;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #666666;
-  line-height: 1.5;
-}
 
 body.cursor-visible .custom-cursor-dot,
 body.cursor-visible .custom-cursor-ring {
@@ -114,15 +68,6 @@ body.cursor-active .custom-cursor-ring {
   --cursor-ring-scale: 1.32;
 }
 
-body.cursor-project-preview .custom-cursor-dot,
-body.cursor-project-preview .custom-cursor-ring {
-  opacity: 0;
-}
-
-body.cursor-project-preview .custom-cursor-preview {
-  opacity: 1;
-  --cursor-preview-scale: 1;
-}
 
 body.cursor-contrast .custom-cursor-dot {
   background: #ffffff;

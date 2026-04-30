@@ -328,31 +328,76 @@
       }
 
       /* ─── LOGO GRID ─── */
-      .logo-grid {
+      .logo-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         border-top: 1px solid #333;
         padding-top: 40px;
       }
 
-      .logo-row {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        border-bottom: 1px solid #333;
+      .logo-section-heading-wrap {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        min-width: 0;
       }
 
-      .logo-cell {
-        padding: 20px 16px;
+      .logo-section-heading {
+        font-size: clamp(28px, 3vw, 48px);
+        font-weight: 400;
+        letter-spacing: -0.04em;
+        color: #ffffff;
+        line-height: 1;
+      }
+
+      .logo-grid {
+        padding-top: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 64px);
+        justify-content: start;
+        gap: 20px;
+      }
+
+      .logo-item {
         display: flex;
         align-items: center;
         justify-content: center;
-        border-right: 1px solid #333;
-        font-size: 11px;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: #444;
       }
 
-      .logo-cell:last-child {
-        border-right: none;
+      .logo-box {
+        width: 64px;
+        height: 64px;
+        background: #111111;
+        border: 1px solid #2d2d2d;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition:
+          background 280ms ease,
+          border-color 280ms ease,
+          transform 280ms ease;
+      }
+
+      .logo-box:hover {
+        background: #ffffff;
+        border-color: #ffffff;
+        transform: scale(1.1);
+      }
+
+      .logo-box img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+        display: block;
+        transition: filter 280ms ease;
+      }
+
+      .logo-box:hover img {
+        filter: brightness(0);
       }
 
       /* ─── CTA BANNER ─── */
@@ -1025,14 +1070,6 @@
           font-size: 10px;
         }
 
-        .logo-row {
-          grid-template-columns: repeat(3, 1fr);
-        }
-        .logo-cell:nth-child(4),
-        .logo-cell:nth-child(5) {
-          display: none;
-        }
-
         .cta-banner {
           height: auto;
           padding: 48px 20px;
@@ -1639,8 +1676,6 @@
         <article
           class="project-item"
           tabindex="0"
-          data-preview-label="Project image placeholder"
-          data-preview-image="imgs/nx-linkedin-post.jpg"
         >
           <div class="project-index">01</div>
           <div class="project-card-content">
@@ -1668,8 +1703,6 @@
         <article
           class="project-item"
           tabindex="0"
-          data-preview-label="Project image placeholder / 02"
-          data-preview-image="imgs/mitzc-slidedeck.jpg"
         >
           <div class="project-index">02</div>
           <div class="project-card-content">
@@ -1683,10 +1716,8 @@
             <div class="project-details">
               <div class="project-details-inner">
                 <p class="project-detail-copy">
-                  The direction here leans into a sharper studio language,
-                  pairing bold campaign-style framing with tactile texture
-                  studies and a more pronounced rhythm between copy, spacing,
-                  and interaction.
+                  Brand and content design for a nonprofit organization. Delivered a full suite of visual assets including social campaigns, impact infographics, and donor-facing presentations that simplified complex program messaging and supported fundraising efforts.
+
                 </p>
               </div>
             </div>
@@ -1696,7 +1727,6 @@
         <article
           class="project-item"
           tabindex="0"
-          data-preview-label="Project image placeholder / 03"
         >
           <div class="project-index">03</div>
           <div class="project-card-content">
@@ -1710,10 +1740,7 @@
             <div class="project-details">
               <div class="project-details-inner">
                 <p class="project-detail-copy">
-                  This concept focuses on the relationship between interface
-                  systems and interaction behavior, using prototype thinking,
-                  motion cues, and clear hierarchy to explain the work before
-                  the full case study opens.
+         Content and social design for a boutique medical spa. Created and scheduled platform-specific posts using Adobe Creative Suite, pitched original content concepts to leadership, and used audience analytics to shape ongoing content strategy.
                 </p>
               </div>
             </div>
@@ -1726,27 +1753,20 @@
       </div>
 
       <!-- Client Logo Grid -->
-      <div class="logo-grid">
-        <div class="logo-row">
-          <div class="logo-cell">Client Logo</div>
-          <div class="logo-cell">Client Logo</div>
-          <div class="logo-cell">Client Logo</div>
-          <div class="logo-cell">Client Logo</div>
-          <div class="logo-cell">Client Logo</div>
+      <div class="logo-section">
+        <div class="logo-grid">
+          <div class="logo-item"><div class="logo-box"><img src="technology icons/figma.svg" alt="Figma" /></div></div>
+          <div class="logo-item"><div class="logo-box"><img src="technology icons/html5.svg" alt="HTML5" /></div></div>
+          <div class="logo-item"><div class="logo-box"><img src="technology icons/css3.svg" alt="CSS3" /></div></div>
+          <div class="logo-item"><div class="logo-box"><img src="technology icons/javascript.svg" alt="JavaScript" /></div></div>
+          <div class="logo-item"><div class="logo-box"><img src="technology icons/adobe-ae.svg" alt="Adobe After Effects" /></div></div>
+          <div class="logo-item"><div class="logo-box"><img src="technology icons/adobe-ai.svg" alt="Adobe Illustrator" /></div></div>
+          <div class="logo-item"><div class="logo-box"><img src="technology icons/adobe-pr.svg" alt="Adobe Premiere" /></div></div>
+          <div class="logo-item"><div class="logo-box"><img src="technology icons/adobe-ps.svg" alt="Adobe Photoshop" /></div></div>
+          <div class="logo-item"><div class="logo-box"><img src="technology icons/canva.svg" alt="Canva" /></div></div>
         </div>
-        <div class="logo-row">
-          <div class="logo-cell">Client Logo</div>
-          <div class="logo-cell">Client Logo</div>
-          <div class="logo-cell">Client Logo</div>
-          <div class="logo-cell">Client Logo</div>
-          <div class="logo-cell">Client Logo</div>
-        </div>
-        <div class="logo-row">
-          <div class="logo-cell">Client Logo</div>
-          <div class="logo-cell">Client Logo</div>
-          <div class="logo-cell">Client Logo</div>
-          <div class="logo-cell">Client Logo</div>
-          <div class="logo-cell">Client Logo</div>
+        <div class="logo-section-heading-wrap">
+          <h2 class="logo-section-heading">Technologies</h2>
         </div>
       </div>
     </section>
@@ -1756,12 +1776,7 @@
       <div class="bg-placeholder"></div>
       <div class="placeholder-card cta-placeholder">Image placeholder / 09</div>
       <div class="cta-content">
-        <h2>
-          <span class="cta-sans">Let&apos;s build</span><br /><span
-            class="cta-serif"
-            >something precise</span
-          >
-        </h2>
+        <h2>Let's collaborate</h2>
         <a href="#contact" class="btn btn-outline-white">Get In Touch &rarr;</a>
       </div>
     </section>
