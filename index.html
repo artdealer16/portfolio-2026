@@ -337,22 +337,14 @@
         margin-top: 150px;
       }
 
-      .logo-section-title {
-        font-family: "DM Sans", sans-serif;
-        font-size: clamp(14px, 2vw, 22px);
-        font-weight: 400;
-        line-height: 1.1;
-        color: #ffffff;
-        margin-bottom: 40px;
-        text-align: center;
-      }
+ 
 
       .logo-grid {
         padding-top: 0;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        gap: 16px;
+        gap: 40px;
         justify-content: center;
       }
 
@@ -443,51 +435,57 @@
       footer {
         background: var(--black);
         color: var(--white);
-        padding: 64px 48px 32px;
+        padding: 56px 48px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 36px;
       }
 
-      .footer-top {
-        display: grid;
-        grid-template-columns: 200px 1fr 1fr 1fr auto;
+      .footer-icons {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+      }
+
+      .footer-icon-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 280ms ease;
+      }
+
+      .footer-icon-link:hover {
+        transform: scale(1.15);
+      }
+
+      .footer-icon-link img {
+        width: 28px;
+        height: 28px;
+        display: block;
+      }
+
+      .footer-work-links {
+        display: flex;
         gap: 40px;
-        padding-bottom: 48px;
-        border-bottom: 1px solid #333;
-        margin-bottom: 32px;
+        align-items: center;
       }
 
-      .footer-logo {
-        font-family: "DM Sans", sans-serif;
-        font-size: 14px;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        line-height: 1.2;
-      }
-
-      .footer-col h6 {
-        font-size: 10px;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: #666;
-        margin-bottom: 16px;
-      }
-
-      .footer-col ul {
-        list-style: none;
-      }
-      .footer-col ul li {
-        margin-bottom: 10px;
-      }
-
-      .footer-col ul li a {
+      .footer-work-links a {
         text-decoration: none;
-        color: #555;
-        font-size: 12px;
+        color: #666;
+        font-size: 13px;
+        letter-spacing: 0.04em;
+        transition: color 280ms ease;
+      }
+
+      .footer-work-links a:hover {
+        color: var(--white);
       }
 
       .footer-bottom {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
       }
 
@@ -943,20 +941,81 @@
           );
       }
 
+      /* ─── PASSION GALLERY ─── */
+      .passion-gallery {
+        background: #000;
+        overflow: visible;
+      }
+
+      .passion-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+      }
+
+      .passion-cell {
+        aspect-ratio: 1 / 1;
+        background: #000;
+        border: 1px solid #fff;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+      }
+
+      .passion-cell::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.15),
+          rgba(0, 0, 0, 0.65)
+        );
+        opacity: 0;
+        transition: opacity 320ms ease;
+      }
+
+      .passion-cell:hover::after {
+        opacity: 1;
+      }
+
+      .passion-cell img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .passion-cell-label {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-family: "DM Sans", sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 12px;
+        z-index: 2;
+        opacity: 0;
+        transform: translateY(6px);
+        transition:
+          opacity 320ms ease,
+          transform 320ms ease;
+        pointer-events: none;
+      }
+
+      .passion-cell:hover .passion-cell-label {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
       footer {
-        padding: 78px 48px 32px;
-      }
-
-      .footer-top {
-        grid-template-columns: 1.3fr 1fr 1fr 1fr auto;
-        align-items: start;
-      }
-
-      .footer-logo {
-        font-size: clamp(34px, 5vw, 74px);
-        letter-spacing: -0.04em;
-        text-transform: none;
-        line-height: 0.92;
+        padding: 56px 48px 40px;
       }
 
       /* ══════════════════════════════
@@ -986,13 +1045,6 @@
         }
         footer {
           padding: 48px 28px 28px;
-        }
-        .footer-top {
-          grid-template-columns: 160px 1fr 1fr 1fr;
-          gap: 28px;
-        }
-        .footer-top .footer-col:last-child {
-          grid-column: 2 / 5;
         }
       }
 
@@ -1077,24 +1129,18 @@
           align-items: flex-start;
           gap: 28px;
         }
+        .passion-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
 
         footer {
           padding: 40px 20px 24px;
+          gap: 28px;
         }
-        .footer-top {
-          grid-template-columns: 1fr 1fr;
-          gap: 32px;
-        }
-        .footer-logo {
-          grid-column: 1 / -1;
-        }
-        .footer-top .footer-col:last-child {
-          grid-column: auto;
-        }
-        .footer-bottom {
+        .footer-work-links {
           flex-direction: column;
-          align-items: flex-start;
-          gap: 8px;
+          gap: 16px;
+          text-align: center;
         }
       }
 
@@ -1353,8 +1399,7 @@
       .about h2,
       .projects h2,
       .cta-banner h2,
-      .stat-number,
-      .footer-logo {
+      .stat-number {
         font-family: "DM Sans", sans-serif;
       }
 
@@ -1368,7 +1413,6 @@
       .about h2,
       .projects h2,
       .cta-banner h2,
-      .footer-logo,
       .stat-number {
         letter-spacing: -0.06em;
       }
@@ -1376,9 +1420,7 @@
       .hero-copy p,
       .about-left p,
       .project-summary,
-      .project-detail-copy,
-      .footer-col ul li a,
-      .footer-bottom p {
+      .project-detail-copy {
         font-size: 16px;
         line-height: 1.75;
         letter-spacing: 0;
@@ -1633,7 +1675,7 @@
             right now.
           </p>
 
-          <a href="#" class="btn">Read Resume &rarr;</a>
+          <a href="#" class="btn">Read Resume</a>
         </div>
 
         <div class="about-right">
@@ -1681,7 +1723,7 @@
                 <div class="project-title">NetElixir</div>
                 <p class="project-summary">In-house Designer</p>
               </div>
-              <a href="#" class="project-link">View Project &rarr;</a>
+              <a href="#" class="project-link">View Experience</a>
             </div>
             <div class="project-details">
               <div class="project-details-inner">
@@ -1708,7 +1750,7 @@
                 <div class="project-title">Mitzvah Circle</div>
                 <p class="project-summary">Social Media Managment Intern</p>
               </div>
-              <a href="#" class="project-link">View Project &rarr;</a>
+              <a href="#" class="project-link">View Experience</a>
             </div>
             <div class="project-details">
               <div class="project-details-inner">
@@ -1732,7 +1774,7 @@
                 <div class="project-title">The Sanctuary</div>
                 <p class="project-summary">Digital Marketing Intern</p>
               </div>
-              <a href="#" class="project-link">View Project &rarr;</a>
+              <a href="#" class="project-link">View Experience</a>
             </div>
             <div class="project-details">
               <div class="project-details-inner">
@@ -1746,12 +1788,12 @@
       </div>
 
       <div class="projects-cta">
-        <a href="#" class="btn btn-outline-white">View All Works &rarr;</a>
+        <a href="#" class="btn btn-outline-white">View All Works</a>
       </div>
 
       <!-- Client Logo Grid -->
       <div class="logo-section">
-        <h2 class="logo-section-title">Technologies</h2>
+       
         <div class="logo-grid">
           <div class="logo-item"><div class="logo-box"><img src="technology icons/figma.svg" alt="Figma" /></div></div>
           <div class="logo-item"><div class="logo-box"><img src="technology icons/html5.svg" alt="HTML5" /></div></div>
@@ -1772,66 +1814,43 @@
     </section>
 
 
-    <!-- ═══════════════════════════════ CTA BANNER ════════════════════════ -->
-    <section class="cta-banner">
-      <div class="bg-placeholder"></div>
-      <div class="placeholder-card cta-placeholder">Image placeholder / 09</div>
-      <div class="cta-content">
-        <h2>Let's collaborate</h2>
-        <a href="#contact" class="btn btn-outline-white">Get In Touch &rarr;</a>
+    <!-- ════════════════════════ PASSION PROJECTS GALLERY ══════════════════ -->
+    <section class="passion-gallery" id="passion">
+      <div class="passion-grid">
+        <div class="passion-cell"><span class="passion-cell-label">Untitled 01</span></div>
+        <div class="passion-cell"><span class="passion-cell-label">Untitled 02</span></div>
+        <div class="passion-cell"><span class="passion-cell-label">Untitled 03</span></div>
+        <div class="passion-cell"><span class="passion-cell-label">Untitled 04</span></div>
+        <div class="passion-cell"><span class="passion-cell-label">Untitled 05</span></div>
+        <div class="passion-cell"><span class="passion-cell-label">Untitled 06</span></div>
+        <div class="passion-cell"><span class="passion-cell-label">Untitled 07</span></div>
+        <div class="passion-cell"><span class="passion-cell-label">Untitled 08</span></div>
+        <div class="passion-cell"><span class="passion-cell-label">Untitled 09</span></div>
       </div>
     </section>
 
     <!-- ═══════════════════════════════ FOOTER ════════════════════════════ -->
     <footer id="contact">
-      <div class="footer-top">
-        <div class="footer-logo">
-          <span class="heading-sans">Daniel</span><br /><span
-            class="heading-sans"
-            >DeLeon.</span
-          >
-        </div>
+      <div class="footer-icons">
+        <a href="#" class="footer-icon-link" aria-label="GitHub">
+          <img src="technology icons/github.svg" alt="GitHub" />
+        </a>
+        <a href="#" class="footer-icon-link" aria-label="Instagram">
+          <img src="technology icons/instagram.svg" alt="Instagram" />
+        </a>
+        <a href="#" class="footer-icon-link" aria-label="LinkedIn">
+          <img src="technology icons/linkedin.svg" alt="LinkedIn" />
+        </a>
+      </div>
 
-        <div class="footer-col">
-          <h6>Work</h6>
-          <ul>
-            <li><a href="#">Case Study One</a></li>
-            <li><a href="#">Case Study Two</a></li>
-            <li><a href="#">Case Study Three</a></li>
-            <li><a href="#">View All</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h6>About</h6>
-          <ul>
-            <li><a href="#">Story</a></li>
-            <li><a href="#">Resume</a></li>
-            <li><a href="#">Process</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h6>Connect</h6>
-          <ul>
-            <li><a href="#">Email</a></li>
-            <li><a href="#">LinkedIn</a></li>
-            <li><a href="#">Twitter / X</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h6>Legal</h6>
-          <ul>
-            <li><a href="#">Privacy</a></li>
-            <li><a href="#">Terms</a></li>
-          </ul>
-        </div>
+      <div class="footer-work-links">
+        <a href="#">NetElixir</a>
+        <a href="#">Mitzvah Circle</a>
+        <a href="#">The Sanctuary</a>
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 Daniel DeLeon. All rights reserved.</p>
-        <p>Built with care.</p>
+        <p>&copy; 2026 Daniel DeLeon</p>
       </div>
     </footer>
 

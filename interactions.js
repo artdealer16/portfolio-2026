@@ -89,7 +89,7 @@ if (supportsFinePointer && !prefersReducedMotion) {
 
   // This function flips the cursor color on dark sections so the dot and ring stay visible.
   function updateCursorContrast(targetElement) {
-    const isDarkSurface = Boolean(targetElement?.closest('.projects, .cta-banner, footer'));
+    const isDarkSurface = Boolean(targetElement?.closest('.projects, .cta-banner, .passion-gallery, footer'));
     document.body.classList.toggle('cursor-contrast', isDarkSurface);
   }
 
