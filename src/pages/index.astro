@@ -1,0 +1,34 @@
+---
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Projects from '../components/Projects.astro';
+import PassionGallery from '../components/PassionGallery.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import '../styles/interactions.css';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daniel DeLeon — Design Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <Nav />
+    <Hero />
+    <About />
+    <Projects />
+    <PassionGallery />
+    <Footer />
+
+    <script src="/interactions.js" defer></script>
+  </body>
+</html>
