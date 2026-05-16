@@ -1,0 +1,254 @@
+---
+interface Props {
+  index?: string;
+  title?: string;
+  role?: string;
+  timeline?: string;
+  tools?: string;
+  deliverables?: string;
+  overview?: string;
+  overviewBody?: string;
+  challenge?: string;
+  challengeBody?: string;
+  nextTitle?: string;
+  nextHref?: string;
+}
+
+const {
+  index = "01",
+  title = "Project Title",
+  role = "Role",
+  timeline = "Month Year",
+  tools = "Tool A, Tool B",
+  deliverables = "Deliverable A, B",
+  overview = "A short, punchy sentence that frames the entire project and what made it worth doing.",
+  overviewBody = "Expand on the overview here — who the client is, what the goal was, and why this project mattered. Keep it concise and factual.",
+  challenge = "The design had to communicate trust and momentum — simultaneously.",
+  challengeBody = "Describe the specific constraint or tension that made this problem hard. What were the competing priorities? What had already been tried? Why was the conventional approach insufficient here?",
+  nextTitle = "Next Project",
+  nextHref = "/case-study",
+} = Astro.props;
+---
+
+<!-- ─── BACK LINK ─── -->
+<a href="/#work" class="cs-back">Back to Work</a>
+
+<!-- ─── HERO ─── -->
+<section class="cs-hero">
+  <span class="section-index">{index} / Case Study</span>
+
+  <div class="cs-hero-main">
+    <h1 class="cs-hero-title heading-sans">{title}</h1>
+
+    <div class="cs-hero-meta">
+      <div class="cs-hero-meta-item">
+        <span class="cs-meta-label">Role</span>
+        <span class="cs-meta-value">{role}</span>
+      </div>
+      <div class="cs-hero-meta-item">
+        <span class="cs-meta-label">Timeline</span>
+        <span class="cs-meta-value">{timeline}</span>
+      </div>
+      <div class="cs-hero-meta-item">
+        <span class="cs-meta-label">Tools</span>
+        <span class="cs-meta-value">{tools}</span>
+      </div>
+      <div class="cs-hero-meta-item">
+        <span class="cs-meta-label">Deliverables</span>
+        <span class="cs-meta-value">{deliverables}</span>
+      </div>
+    </div>
+
+    <!-- Hero Image -->
+    <div class="cs-hero-image">
+     <img src="/dist/imgs/heropagedesktop.jpg" alt="">
+    </div>
+  </div>
+</section>
+
+<!-- ─── OVERVIEW BAR ─── -->
+<div class="cs-overview-bar">
+  <div class="cs-overview-col">
+    <div class="cs-overview-col-label">Role</div>
+    <div class="cs-overview-col-value">{role}</div>
+  </div>
+  <div class="cs-overview-col">
+    <div class="cs-overview-col-label">Timeline</div>
+    <div class="cs-overview-col-value">{timeline}</div>
+  </div>
+  <div class="cs-overview-col">
+    <div class="cs-overview-col-label">Tools</div>
+    <div class="cs-overview-col-value">{tools}</div>
+  </div>
+  <div class="cs-overview-col">
+    <div class="cs-overview-col-label">Deliverables</div>
+    <div class="cs-overview-col-value">{deliverables}</div>
+  </div>
+</div>
+
+<!-- ─── OVERVIEW ─── -->
+<section class="cs-section cs-section--light">
+  <div class="cs-section-header">
+    <span class="cs-section-index">01 / Overview</span>
+    <h2 class="cs-section-title heading-sans">The Project</h2>
+  </div>
+  <div class="cs-overview-text">
+    <p class="cs-overview-lead">{overview}</p>
+    <p class="cs-overview-body">{overviewBody}</p>
+  </div>
+</section>
+
+<!-- ─── CHALLENGE ─── -->
+<section class="cs-section cs-section--dark">
+  <div class="cs-section-header">
+    <span class="cs-section-index">02 / Challenge</span>
+    <h2 class="cs-section-title heading-sans">The Problem</h2>
+  </div>
+  <div class="cs-challenge-grid">
+    <div>
+      <p class="cs-challenge-quote">&ldquo;{challenge}&rdquo;</p>
+      <p class="cs-challenge-text">{challengeBody}</p>
+    </div>
+    <div class="cs-img-placeholder">
+      Research Frame / 01
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROCESS ─── -->
+<section class="cs-section cs-section--light">
+  <div class="cs-section-header">
+    <span class="cs-section-index">03 / Process</span>
+    <h2 class="cs-section-title heading-sans">How We Got There</h2>
+  </div>
+
+  <div class="cs-process-list">
+    <div class="cs-process-step">
+      <span class="cs-process-num">01</span>
+      <div class="cs-process-copy">
+        <h3>Discovery &amp; Research</h3>
+        <p>Placeholder — describe what research or discovery activities were conducted. Who was interviewed? What data was collected? What did you learn that surprised you and shifted the direction of the project?</p>
+      </div>
+      <div class="cs-img-placeholder cs-img-placeholder--light">
+        Discovery Frame / 01
+      </div>
+    </div>
+
+    <div class="cs-process-step">
+      <span class="cs-process-num">02</span>
+      <div class="cs-process-copy">
+        <h3>Strategy &amp; Direction</h3>
+        <p>Placeholder — explain the strategic framework or creative direction that emerged from research. How did you translate findings into a clear brief or design direction? What decisions were made and why?</p>
+      </div>
+      <div class="cs-img-placeholder cs-img-placeholder--light">
+        Strategy Frame / 02
+      </div>
+    </div>
+
+    <div class="cs-process-step">
+      <span class="cs-process-num">03</span>
+      <div class="cs-process-copy">
+        <h3>Design &amp; Execution</h3>
+        <p>Placeholder — walk through the design phase. What were the key decisions in layout, hierarchy, color, and type? How did early explorations evolve? What feedback shaped the final direction?</p>
+      </div>
+      <div class="cs-img-placeholder cs-img-placeholder--light">
+        Design Frame / 03
+      </div>
+    </div>
+
+    <div class="cs-process-step">
+      <span class="cs-process-num">04</span>
+      <div class="cs-process-copy">
+        <h3>Iteration &amp; Refinement</h3>
+        <p>Placeholder — describe the revision cycle. How many rounds of feedback were there? What changed between versions? What constraints forced creative problem-solving?</p>
+      </div>
+      <div class="cs-img-placeholder cs-img-placeholder--light">
+        Iteration Frame / 04
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── DESIGN SHOWCASE ─── -->
+<section class="cs-section cs-section--mid">
+  <div class="cs-section-header">
+    <span class="cs-section-index">04 / Design</span>
+    <h2 class="cs-section-title heading-sans">The Work</h2>
+  </div>
+
+  <div class="cs-showcase-grid">
+    <div class="cs-showcase-cell cs-showcase-cell--wide">
+      Mockup / Hero Screen
+    </div>
+    <div class="cs-showcase-cell cs-showcase-cell--tall">
+      Detail / 01
+    </div>
+    <div class="cs-showcase-cell cs-showcase-cell--half">
+      Mockup / Mobile
+    </div>
+    <div class="cs-showcase-cell cs-showcase-cell--half">
+      Mockup / Tablet
+    </div>
+    <div class="cs-showcase-cell cs-showcase-cell--third">
+      Component / 01
+    </div>
+    <div class="cs-showcase-cell cs-showcase-cell--third">
+      Component / 02
+    </div>
+    <div class="cs-showcase-cell cs-showcase-cell--third">
+      Component / 03
+    </div>
+  </div>
+</section>
+
+<!-- ─── RESULTS ─── -->
+<section class="cs-section cs-section--light">
+  <div class="cs-section-header">
+    <span class="cs-section-index">05 / Outcomes</span>
+    <h2 class="cs-section-title heading-sans">The Impact</h2>
+  </div>
+
+  <div class="cs-results-grid">
+    <div class="cs-result-item">
+      <div class="cs-result-number">—</div>
+      <div class="cs-result-label">Metric One</div>
+      <p class="cs-result-desc">Placeholder — describe a specific, measurable outcome tied to this project. Quantify where possible.</p>
+    </div>
+    <div class="cs-result-item">
+      <div class="cs-result-number">—</div>
+      <div class="cs-result-label">Metric Two</div>
+      <p class="cs-result-desc">Placeholder — another key result. Focus on business or user impact, not just design outputs.</p>
+    </div>
+    <div class="cs-result-item">
+      <div class="cs-result-number">—</div>
+      <div class="cs-result-label">Metric Three</div>
+      <p class="cs-result-desc">Placeholder — a third outcome. Could be qualitative — stakeholder feedback, brand perception shift, team adoption.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── REFLECTION ─── -->
+<section class="cs-section cs-section--light" style="border-top: 1px solid var(--light-gray); padding-top: 72px;">
+  <div class="cs-section-header">
+    <span class="cs-section-index">06 / Reflection</span>
+    <h2 class="cs-section-title heading-sans">What I Learned</h2>
+  </div>
+
+  <div class="cs-reflection">
+    <p class="cs-reflection-lead">
+      Placeholder — one or two sentences capturing the most important lesson or insight from this project.
+    </p>
+    <p class="cs-reflection-body">
+      Placeholder — expand on what you'd do differently, what skills grew, or what surprised you. Be honest and specific. Recruiters and clients respond to genuine reflection far more than polished PR. What constraint became an advantage? What assumption turned out to be wrong?
+    </p>
+  </div>
+</section>
+
+<!-- ─── NEXT PROJECT ─── -->
+<div class="cs-next">
+  <div>
+    <div class="cs-next-label">Next Project</div>
+    <div class="cs-next-title heading-sans">{nextTitle}</div>
+  </div>
+  <a href={nextHref} class="btn btn-outline-white">View Case Study</a>
+</div>

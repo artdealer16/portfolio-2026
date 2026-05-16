@@ -1,0 +1,44 @@
+---
+import Nav from '../components/Nav.astro';
+import CaseStudy from '../components/CaseStudy.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import '../styles/interactions.css';
+import '../styles/casestudy.css';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NetElixir — Daniel DeLeon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <Nav />
+
+    <CaseStudy
+      index="01"
+      title="NetElixir"
+      role="Content Designer"
+      timeline="Month"
+      tools="Figma, Photoshop"
+      deliverables="Home Page, Mega Menu Page, Branding page"
+      overview="A full-scale redesign of AI distribution"
+      overviewBody=""
+      challenge="The design had to communicate cutting-edge AI capability without losing the warmth and approachability the sales team depended on."
+      challengeBody="Enterprise marketing tools often default to cold, overly technical aesthetics that alienate the mid-market buyers NetElixir was targeting. The challenge was finding a visual language that felt intelligent and rigorous without becoming sterile — all within a tight content calendar and without an established brand system to build from."
+      nextTitle="Mitzvah Circle"
+      nextHref="/case-study"
+    />
+
+    <Footer />
+
+    <script src="/interactions.js" defer></script>
+  </body>
+</html>
