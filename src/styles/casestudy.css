@@ -249,6 +249,7 @@
   text-transform: uppercase;
   position: relative;
   overflow: hidden;
+  object-fit: fill;
 }
 
 .cs-img-placeholder--light {
@@ -478,7 +479,12 @@
 }
 
 /* ─── BACK LINK ─── */
-.cs-back {
+
+
+
+
+
+.cs-back a{
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -491,11 +497,11 @@
   margin-bottom: 64px;
   padding: 60px ;
   display: block;
-  background: var(--black);
+  
 }
 
 .cs-back:hover {
-  color: var(--white);
+  color: var(--black);;
 }
 
 /* ══════════════════════════════
